@@ -1,7 +1,6 @@
 package net.quetzi.bluepower.init;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockStone;
 import net.quetzi.bluepower.blocks.BlockAlloyFurnace;
 import net.quetzi.bluepower.blocks.BlockCrop;
 import net.quetzi.bluepower.blocks.BlockCustomFlower;
