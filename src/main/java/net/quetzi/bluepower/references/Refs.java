@@ -27,6 +27,7 @@ public class Refs {
     public static final String MALACHITEORE_NAME      = "malachite_ore";
     public static final String RUBYORE_NAME           = "ruby_ore";
     public static final String SAPPHIREORE_NAME       = "sapphire_ore";
+    public static final String AMETHYSTORE_NAME       = "amethyst_ore";
     public static final String NIKOLITEORE_NAME       = "nikolite_ore";
     public static final String MALACHITEBLOCK_NAME    = "malachite_block";
     public static final String SAPPHIREBLOCK_NAME     = "sapphire_block";
