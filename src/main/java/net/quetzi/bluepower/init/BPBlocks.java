@@ -30,6 +30,7 @@ public class BPBlocks {
     public static Block ruby_ore;
     public static Block sapphire_ore;
     public static Block malachite_ore;
+    public static Block amethyst_ore;
     
     public static Block copper_ore;
     public static Block silver_ore;
@@ -38,6 +39,7 @@ public class BPBlocks {
     public static Block ruby_block;
     public static Block sapphire_block;
     public static Block malachite_block;
+    public static Block amethyst_block;
     public static Block nikolite_block;
     public static Block copper_block;
     public static Block silver_block;
@@ -68,6 +70,7 @@ public class BPBlocks {
         ruby_ore = new BlockItemOre(Refs.RUBYORE_NAME, BPItems.ruby);
         sapphire_ore = new BlockItemOre(Refs.SAPPHIREORE_NAME, BPItems.sapphire);
         malachite_ore = new BlockItemOre(Refs.MALACHITEORE_NAME, BPItems.malachite);
+        amethyst_ore = new BlockItemOre(Refs.AMETHYSTORE_NAME, BPItems.amethyst);
         copper_ore = new BlockStoneOre(Refs.COPPERORE_NAME);
         silver_ore = new BlockStoneOre(Refs.SILVERORE_NAME);
         tin_ore = new BlockStoneOre(Refs.TINORE_NAME);
@@ -75,6 +78,7 @@ public class BPBlocks {
         ruby_block = new BlockStoneOre(Refs.RUBYBLOCK_NAME);
         sapphire_block = new BlockStoneOre(Refs.SAPPHIREBLOCK_NAME);
         malachite_block = new BlockStoneOre(Refs.MALACHITEBLOCK_NAME);
+        amethyst_block = new BlockStoneOre(Refs.AMETHYSTBLOCK_NAME);
         nikolite_block = new BlockStoneOre(Refs.NIKOLITEBLOCK_NAME);
         copper_block = new BlockStoneOre(Refs.COPPERBLOCK_NAME);
         silver_block = new BlockStoneOre(Refs.SILVERBLOCK_NAME);
@@ -111,9 +115,11 @@ public class BPBlocks {
         GameRegistry.registerBlock(ruby_ore, Refs.RUBYORE_NAME);
         GameRegistry.registerBlock(sapphire_ore, Refs.SAPPHIREORE_NAME);
         GameRegistry.registerBlock(malachite_ore, Refs.MALACHITEORE_NAME);
+        GameRegistry.registerBlock(amethyst_ore, Refs.AMETHYSTORE_NAME);
         GameRegistry.registerBlock(ruby_block, Refs.RUBYBLOCK_NAME);
         GameRegistry.registerBlock(sapphire_block, Refs.SAPPHIREBLOCK_NAME);
         GameRegistry.registerBlock(malachite_block, Refs.MALACHITEBLOCK_NAME);
+        GameRegistry.registerBlock(amethyst_block, Refs.AMETHYSTBLOCK_NAME);
         GameRegistry.registerBlock(nikolite_block, Refs.NIKOLITEBLOCK_NAME);
         GameRegistry.registerBlock(copper_block, Refs.COPPERBLOCK_NAME);
         GameRegistry.registerBlock(silver_block, Refs.SILVERBLOCK_NAME);
