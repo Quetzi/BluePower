@@ -31,11 +31,13 @@ public class Refs {
     public static final String MALACHITEBLOCK_NAME    = "malachite_block";
     public static final String SAPPHIREBLOCK_NAME     = "sapphire_block";
     public static final String RUBYBLOCK_NAME         = "ruby_block";
+    public static final String AMETHYSTBLOCK_NAME     = "amethyst_block";
     public static final String NIKOLITEBLOCK_NAME     = "nikolite_block";
     
     public static final String ITEMMALACHITE_NAME     = "malachite_gem";
     public static final String ITEMSAPPHIRE_NAME      = "sapphire_gem";
     public static final String ITEMRUBY_NAME          = "ruby_gem";
+    public static final String ITEMAMETHYST_NAME      = "amethyst_gem";
     public static final String ITEMNIKOLITE_NAME      = "nikolite_dust";
     
     public static final String COPPERORE_NAME         = "copper_ore";
@@ -83,11 +85,19 @@ public class Refs {
     public static final String MULTIPART_NAME         = "bluepower_multipart";
     
     public static final String CRACKEDBASALTBRICK_NAME= "basaltbrick_cracked";
-    public static final String SMALLBASALTBRICK_NAME = "basalt_brick_small";
-    public static final String SMALLMARBLEBRICK_NAME = "marble_brick_small";
+    public static final String SMALLBASALTBRICK_NAME  = "basalt_brick_small";
+    public static final String SMALLMARBLEBRICK_NAME  = "marble_brick_small";
     public static final String CHISELEDBASALTBRICK_NAME = "fancy_basalt";
     public static final String CHISELEDMARBLEBRICK_NAME = "fancy_marble";
-    public static final String MARBLETILE_NAME = "marble_tile";
-    public static final String BASALTTILE_NAME = "basalt_tile";
+    public static final String MARBLETILE_NAME        = "marble_tile";
+    public static final String BASALTTILE_NAME        = "basalt_tile";
+
+    public static final String AMETHYSTAXE_NAME       = "amethyst_axe";
+    public static final String AMETHYSTSWORD_NAME     = "amethyst_sword";
+    public static final String AMETHYSTPICKAXE_NAME   = "amethyst_pickaxe";
+    public static final String AMETHYSTSPADE_NAME     = "amethyst_shovel";
+    public static final String AMETHYSTHOE_NAME       = "amethyst_hoe";
+    public static final String AMETHYSTSICKLE_NAME    = "amethyst_sickle";
+
     
 }

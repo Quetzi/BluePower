@@ -33,6 +33,7 @@ public class BPItems {
     public static Item          malachite;
     public static Item          sapphire;
     public static Item          ruby;
+    public static Item          amethyst;
     public static Item          nikolite;
     public static Item          copper_ingot;
     public static Item          silver_ingot;
@@ -69,12 +70,20 @@ public class BPItems {
     public static Item          indigo_dye;
     
     public static Item          multipart;
+
+    public static Item          amethyst_axe;
+    public static Item          amethyst_sword;
+    public static Item          amethyst_pickaxe;
+    public static Item          amethyst_spade;
+    public static Item          amethyst_hoe;
+    public static Item          amethyst_sickle;
     
     public static void init() {
     
         malachite = new ItemGem(Refs.ITEMMALACHITE_NAME);
         sapphire = new ItemGem(Refs.ITEMSAPPHIRE_NAME);
         ruby = new ItemGem(Refs.ITEMRUBY_NAME);
+        amethyst = new ItemGem(Refs.ITEMAMETHYST_NAME);
         nikolite = new ItemNikolite();
         copper_ingot = new ItemIngot(Refs.ITEMCOPPERINGOT_NAME);
         silver_ingot = new ItemIngot(Refs.ITEMSILVERINGOT_NAME);
@@ -122,7 +131,18 @@ public class BPItems {
         } else {
             initFMP();
         }
-        
+
+        amethyst_axe = new ItemGemAxe(gemMaterial, Refs.AMETHYSTAXE_NAME);
+        amethyst_sword = new ItemGemSword(gemMaterial,
+                Refs.AMETHYSTSWORD_NAME);
+        amethyst_pickaxe = new ItemGemPickaxe(gemMaterial,
+                Refs.AMETHYSTPICKAXE_NAME);
+        amethyst_spade = new ItemGemSpade(gemMaterial,
+                Refs.AMETHYSTSPADE_NAME);
+        amethyst_hoe = new ItemGemHoe(gemMaterial, Refs.AMETHYSTHOE_NAME);
+        amethyst_sickle = new ItemSickle(gemMaterial,
+                Refs.AMETHYSTSICKLE_NAME);
+
         registerItems();
     }
     
@@ -137,6 +157,7 @@ public class BPItems {
         GameRegistry.registerItem(malachite, Refs.ITEMMALACHITE_NAME);
         GameRegistry.registerItem(sapphire, Refs.ITEMSAPPHIRE_NAME);
         GameRegistry.registerItem(ruby, Refs.ITEMRUBY_NAME);
+        GameRegistry.registerItem(amethyst, Refs.ITEMAMETHYST_NAME);
         GameRegistry.registerItem(nikolite, Refs.ITEMNIKOLITE_NAME);
         GameRegistry.registerItem(copper_ingot, Refs.ITEMCOPPERINGOT_NAME);
         GameRegistry.registerItem(silver_ingot, Refs.ITEMSILVERINGOT_NAME);
@@ -161,8 +182,7 @@ public class BPItems {
         
         GameRegistry.registerItem(malachite_axe, Refs.MALACHITEAXE_NAME);
         GameRegistry.registerItem(malachite_sword, Refs.MALACHITESWORD_NAME);
-        GameRegistry
-                .registerItem(malachite_pickaxe, Refs.MALACHITEPICKAXE_NAME);
+        GameRegistry.registerItem(malachite_pickaxe, Refs.MALACHITEPICKAXE_NAME);
         GameRegistry.registerItem(malachite_spade, Refs.MALACHITESPADE_NAME);
         GameRegistry.registerItem(malachite_hoe, Refs.MALACHITEHOE_NAME);
         GameRegistry.registerItem(malachite_sickle, Refs.MALACHITESICKLE_NAME);
@@ -178,5 +198,12 @@ public class BPItems {
         MinecraftForge.addGrassSeed(new ItemStack(flax_seed), 5);
         
         GameRegistry.registerItem(multipart, Refs.MULTIPART_NAME);
+
+        GameRegistry.registerItem(amethyst_axe, Refs.AMETHYSTAXE_NAME);
+        GameRegistry.registerItem(amethyst_sword, Refs.AMETHYSTSWORD_NAME);
+        GameRegistry.registerItem(amethyst_pickaxe, Refs.AMETHYSTPICKAXE_NAME);
+        GameRegistry.registerItem(amethyst_spade, Refs.AMETHYSTSPADE_NAME);
+        GameRegistry.registerItem(amethyst_hoe, Refs.AMETHYSTHOE_NAME);
+        GameRegistry.registerItem(amethyst_sickle, Refs.AMETHYSTSICKLE_NAME);
     }
 }
