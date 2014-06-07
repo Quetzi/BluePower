@@ -38,6 +38,9 @@ item.nikolite_dust.name=Nikolite
 item.copper_ingot.name=Copper Ingot
 item.silver_ingot.name=Silver Ingot
 item.tin_ingot.name=Tin Ingot
+item.brass_ingot.name=Brass Ingot
+item.blue_alloy_ingot.name=Blue Alloy Ingot
+item.red_alloy_ingot.name=Red Alloy Ingot
 
 item.flax_seeds.name=Flax Seeds
 item.indigo_flower.name=Indigo Flower
