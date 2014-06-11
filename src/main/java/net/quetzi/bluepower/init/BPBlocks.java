@@ -29,6 +29,9 @@ import net.quetzi.bluepower.blocks.BlockStoneOre;
 import net.quetzi.bluepower.blocks.BlockStoneOreConnected;
 import net.quetzi.bluepower.references.Refs;
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.quetzi.bluepower.tileentities.tier1.TileAlloyFurnace;
+import net.quetzi.bluepower.tileentities.tier1.TileBlockBreaker;
+import net.quetzi.bluepower.tileentities.tier1.TileIgniter;
 
 public class BPBlocks {
 
@@ -115,6 +118,8 @@ public class BPBlocks {
         igniter = new BlockIgniter();
 
         registerBlocks();
+
+	    registerTileEntities();
     }
 
     private static void registerBlocks() {
@@ -158,4 +163,11 @@ public class BPBlocks {
         GameRegistry.registerBlock(block_breaker, Refs.BLOCKBREAKER_NAME);
         GameRegistry.registerBlock(igniter, Refs.BLOCKIGNITER_NAME);
     }
+
+	private static void registerTileEntities() {
+
+		GameRegistry.registerTileEntity(TileAlloyFurnace.class, "alloyfurnace");
+		GameRegistry.registerTileEntity(TileBlockBreaker.class, "blockbreaker");
+		GameRegistry.registerTileEntity(TileIgniter.class, "igniter");
+	}
 }
