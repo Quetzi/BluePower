@@ -82,16 +82,7 @@ public class BPItems {
     public static Item          screwdriver;
     public static Item          athame;
     public static Item          tinplate;
-    public static Item          stone_wafer;
-    public static Item          stone_wire;
-    public static Item          stone_anode;
-    public static Item          stone_cathode;
-    public static Item          stone_pointer;
-    public static Item          silicon_chip;
-    public static Item          taintedsilicon_chip;
-    public static Item          stone_redwire;
-    public static Item          plate_assembly;
-    public static Item          stone_bundle;
+    public static Item          craftingItems;
     public static Item          screwdriver_handle;
 
     private static ToolMaterial gemMaterial = EnumHelper.addToolMaterial("GEM", 2, 750, 6.0F, 2.0F, 18);
@@ -152,16 +143,7 @@ public class BPItems {
         screwdriver = new ItemScrewdriver();
         athame = new ItemAthame();
         tinplate = new ItemTinPlate();
-        stone_wafer = new ItemStoneWafer(Refs.ITEMSTONEWAFER_NAME);
-        stone_wire = new ItemStoneWafer(Refs.ITEMSTONEWIRE_NAME);
-        stone_anode = new ItemStoneWafer(Refs.ITEMSTONEANODE_NAME);
-        stone_cathode = new ItemStoneWafer(Refs.ITEMSTONECATHODE_NAME);
-        stone_pointer = new ItemStoneWafer(Refs.ITEMSTONEPOINTER_NAME);
-        silicon_chip = new ItemStoneWafer(Refs.ITEMSILICONCHIP_NAME);
-        taintedsilicon_chip = new ItemStoneWafer(Refs.ITEMTAINTEDSILICONCHIP_NAME);
-        stone_redwire  = new ItemStoneWafer(Refs.ITEMSTONEREDWIRE_NAME);
-        plate_assembly = new ItemStoneWafer(Refs.ITEMPLATEASSEMBLY_NAME);
-        stone_bundle = new ItemStoneWafer(Refs.ITEMSTONEBUNDLE_NAME);
+        craftingItems = new ItemCrafting(Refs.CRAFTING_NAME);
         screwdriver_handle = new ItemHandle(Refs.ITEMSCREWDRIVERHANDLE_NAME);
 
         if (!Loader.isModLoaded(Dependencies.FMP)) {
@@ -235,16 +217,7 @@ public class BPItems {
         GameRegistry.registerItem(athame, Refs.ITEMATHAME_NAME);
         GameRegistry.registerItem(tinplate, Refs.ITEMTINPLATE_NAME);
 
-        GameRegistry.registerItem(stone_wafer, Refs.ITEMSTONEWAFER_NAME);
-        GameRegistry.registerItem(stone_wire, Refs.ITEMSTONEWIRE_NAME);
-        GameRegistry.registerItem(stone_anode, Refs.ITEMSTONEANODE_NAME);
-        GameRegistry.registerItem(stone_cathode, Refs.ITEMSTONECATHODE_NAME);
-        GameRegistry.registerItem(stone_pointer, Refs.ITEMSTONEPOINTER_NAME);
-        GameRegistry.registerItem(silicon_chip, Refs.ITEMSILICONCHIP_NAME);
-        GameRegistry.registerItem(taintedsilicon_chip, Refs.ITEMTAINTEDSILICONCHIP_NAME);
-        GameRegistry.registerItem(stone_redwire, Refs.ITEMSTONEREDWIRE_NAME);
-        GameRegistry.registerItem(plate_assembly, Refs.ITEMPLATEASSEMBLY_NAME);
-        GameRegistry.registerItem(stone_bundle, Refs.ITEMSTONEBUNDLE_NAME);
+        GameRegistry.registerItem(craftingItems,Refs.CRAFTING_NAME);
         GameRegistry.registerItem(screwdriver_handle, Refs.ITEMSCREWDRIVERHANDLE_NAME);
 
         MinecraftForge.addGrassSeed(new ItemStack(flax_seed), 5);
