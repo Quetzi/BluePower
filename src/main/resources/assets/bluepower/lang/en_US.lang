@@ -37,6 +37,10 @@ tile.igniter.name=Igniter
 tile.buffer.name=Buffer
 tile.sortron.name=Sortron
 tile.sorting_machine.name=Sorting Machine
+tile.cpu.name=CPU
+tile.monitor.name=Monitor
+tile.disk_drive.name=Disk Drive
+tile.io_expander.name=IO Expander
 
 tile.lamp_white.name=White Lamp
 tile.invertedlamp_white.name=Inverted White Lamp
