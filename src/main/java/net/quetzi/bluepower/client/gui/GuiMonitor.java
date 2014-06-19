@@ -11,8 +11,8 @@ import org.lwjgl.opengl.GL11;
 
 public class GuiMonitor extends GuiBase {
     
-    private static final ResourceLocation resLoc            = new ResourceLocation(Refs.MODID + ":textures/gui/monitorgui.png");
-    private static final ResourceLocation chracterSetResLoc = new ResourceLocation(Refs.MODID + ":textures/gui/65el02_chars.png");
+    private static final ResourceLocation resLoc            = new ResourceLocation(Refs.MODID, "textures/GUI/monitorgui.png");
+    private static final ResourceLocation chracterSetResLoc = new ResourceLocation(Refs.MODID, "textures/GUI/65el02_chars.png");
     private final TileMonitor             monitor;
     
     public GuiMonitor(InventoryPlayer invPlayer, TileMonitor monitor) {
@@ -22,13 +22,13 @@ public class GuiMonitor extends GuiBase {
         xSize = 350;
         ySize = 230;
         width = 350 / 2;
-        //TODO: fix height and width fields as well
+        // TODO: fix height and width fields as well
     }
     
     @Override
     protected void drawGuiContainerBackgroundLayer(float f, int i, int j) {
     
-        //super.drawGuiContainerBackgroundLayer(f, i, j);
+        // super.drawGuiContainerBackgroundLayer(f, i, j);
         
         GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
         mc.getTextureManager().bindTexture(resLoc);
@@ -43,7 +43,7 @@ public class GuiMonitor extends GuiBase {
         for (int row = 0; row < 50; row++) {
             for (int col = 0; col < 80; col++) {
                 byte character = monitor.screenMemory[row * 80 + col];
-                //TODO: overlay cursor character
+                // TODO: overlay cursor character
                 if (character != 32) {
                     drawCharacter(row, col, character);
                 }
@@ -55,19 +55,19 @@ public class GuiMonitor extends GuiBase {
     
         int x = (width - xSize) / 2;
         int y = (height - ySize) / 2;
-        int tempOffset = 0; //350;
+        int tempOffset = 0; // 350;
         if (monitor.mode80x40) {
-            //Not implemented yet
+            // Not implemented yet
             drawTexturedModalRect3(x + 15 + col * 4, y + 15 + row * 4, tempOffset + (character & 0xF) * 8, (character >> 4) * 8, 8, 8);
         } else {
-            //TODO: fix texture mapping issues
+            // TODO: fix texture mapping issues
             drawTexturedModalRect3(x + 15 + col * 4, y + 15 + row * 4, tempOffset + (character & 0xF) * 8, (character >> 4) * 8, 8, 8);
         }
     }
     
     /**
-        * Draws a textured rectangle at the stored z-value. Args: x, y, u, v, width, height
-    */
+     * Draws a textured rectangle at the stored z-value. Args: x, y, u, v, width, height
+     */
     public void drawTexturedModalRect2(int x, int z, int u, int v, int w, int h) {
     
         float f = 0.00195313F;
