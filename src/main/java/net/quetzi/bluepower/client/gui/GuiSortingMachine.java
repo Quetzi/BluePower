@@ -114,7 +114,7 @@ public class GuiSortingMachine extends GuiBase {
     
         super.drawGuiContainerForegroundLayer(mouseX, mouseY);
         // fontRenderer.drawString(pump.getInvName(), 8, 6, 0xFFFFFF);
-        drawHorizontalAlignedString(7, 3, xSize - 14, sortingMachine.getInventoryName(), true);
+        drawHorizontalAlignedString(7, 6, xSize - 14, sortingMachine.getInventoryName(), false);
         
     }
     
