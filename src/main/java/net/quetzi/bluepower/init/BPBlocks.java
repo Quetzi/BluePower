@@ -29,6 +29,7 @@ import net.quetzi.bluepower.blocks.worldgen.BlockCrackedBasalt;
 import net.quetzi.bluepower.blocks.worldgen.BlockCrop;
 import net.quetzi.bluepower.blocks.worldgen.BlockCustomFlower;
 import net.quetzi.bluepower.blocks.worldgen.BlockStoneOre;
+import net.quetzi.bluepower.blocks.machines.BlockKineticGenerator;
 import net.quetzi.bluepower.blocks.worldgen.BlockStoneOreConnected;
 import net.quetzi.bluepower.references.Dependencies;
 import net.quetzi.bluepower.references.Refs;
