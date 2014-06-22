@@ -300,6 +300,11 @@ gui.counterCount=Count
 gui.connections=Connections
 gui.passThrough=Passing through
 
+gui.redbusgui=Set Bus ID
+gui.redbus.id=ID
+gui.widget.dipswitch.on=On
+gui.widget.dipswitch.off=Off
+
 gui.sortMode=§1Sort Mode
 gui.pullMode=§1Pull Mode
 gui.sortMode.any_stack_sequential=§3Any Stack, Sequential

@@ -6,29 +6,43 @@ import net.quetzi.bluepower.tileentities.TileBase;
  * @author fabricator77
  */
 public class TileMonitor extends TileBase implements IRedBusWindow  {
-	public byte framebufferRow = 0;
-	public byte cursorX = 0;
-	public byte cursorY = 0;
-	
-	public byte blit_command = 0;
-	public byte blit_sourceX = 0;
-	public byte blit_sourceY = 0;
-	public byte blit_destX = 0;
-	public byte blit_destY = 0;
-	public byte blit_rectWidth = 0;
-	public byte blit_rectHeight = 0;
-	
-	public byte[] framebuffer = new byte[80];
-	public byte[] keybuffer = new byte[16];
-	//Also used by GUI
-	public byte[] screenMemory = new byte[4000];
-	public static boolean mode80x40 = false;
-	public static float[] screenColor = new float[]{1.0F, 0.8F, 0.0F};
-	
-	public TileMonitor() {
-		blankMemory();
-		testMemory();
-	}
+    public byte framebufferRow = 0;
+    public byte cursorX = 0;
+    public byte cursorY = 0;
+
+    public byte blit_command = 0;
+    public byte blit_sourceX = 0;
+    public byte blit_sourceY = 0;
+    public byte blit_destX = 0;
+    public byte blit_destY = 0;
+    public byte blit_rectWidth = 0;
+    public byte blit_rectHeight = 0;
+
+    public byte[] framebuffer = new byte[80];
+    public byte[] keybuffer = new byte[16];
+    //Also used by GUI
+    public byte[] screenMemory = new byte[4000];
+    public static boolean mode80x40 = false;
+    public static float[] screenColor = new float[]{1.0F, 0.8F, 0.0F};
+
+    private byte redbus_id = 1;
+
+    public TileMonitor() {
+        blankMemory();
+        testMemory();
+    }
+
+    @Override
+    public void setRedbus_id(int id) {
+    
+        redbus_id = (byte)id;
+    }
+
+    @Override
+    public int getRedbus_id() {
+    
+        return redbus_id;
+    }
 	
 	private void blankMemory ()
 	{
