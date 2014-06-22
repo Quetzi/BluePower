@@ -4,7 +4,6 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.StatCollector;
-import net.quetzi.bluepower.BluePower;
 import net.quetzi.bluepower.api.part.BPPart;
 import net.quetzi.bluepower.client.gui.widget.BaseWidget;
 import net.quetzi.bluepower.client.gui.widget.IGuiWidget;
@@ -15,6 +14,9 @@ import net.quetzi.bluepower.network.messages.MessageGuiUpdate;
 import net.quetzi.bluepower.references.Refs;
 import net.quetzi.bluepower.tileentities.tier3.IRedBusWindow;
 
+/**
+ * @author fabricator77
+ */
 public class GuiRedbusID extends GuiBase {
 private final IRedBusWindow device;
 
