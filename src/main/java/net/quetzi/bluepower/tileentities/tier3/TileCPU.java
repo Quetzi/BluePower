@@ -54,11 +54,25 @@ public class TileCPU extends TileBase implements IRedBusWindow {
     // used in decoding opcodes
     private int effectiveAddress;
     private int BRKaddress;
+    private byte redbus_id = 0;
+    public int installedMemory = 8;// in kilobytes
 
     public TileCPU() {
         //TODO: make memory a config option
-        this.memory = new byte[8192];
+        this.memory = new byte[installedMemory * 1024];
         powerOnReset();
+    }
+    
+    @Override
+    public void setRedbus_id(int id) {
+    
+        redbus_id = (byte)id;
+    }
+
+    @Override
+    public int getRedbus_id() {
+    
+        return redbus_id;
     }
     
     public void powerOnReset () {
