@@ -2,6 +2,7 @@ package net.quetzi.bluepower.tileentities.tier1;
 
 import java.util.List;
 
+import scala.runtime.StringFormat;
 import scala.util.Random;
 import scala.util.automata.WordBerrySethi;
 
@@ -68,18 +69,29 @@ public class TileDeployer extends TileBase implements ISidedInventory {
         }
     }
     
+    private static final int[] ROTATION_SIDE_MAPPING = { 0, 0, 0, 2, 3, 1 };
+    
     private void placeItem() {
     
         ForgeDirection direction = this.getFacingDirection();
-        FakePlayer player = FakePlayerFactory.get((WorldServer) worldObj, new GameProfile(Refs.MODID + ":", "deployer.fakeplayer"));
+        FakePlayer player = new FakePlayer((WorldServer) worldObj, new GameProfile(Refs.MODID + "." + xCoord + "." + yCoord + "." + zCoord,".bluepower.fakeplayer.deployer"));
+        ForgeDirection side = ForgeDirection.VALID_DIRECTIONS[getBlockMetadata() % ForgeDirection.VALID_DIRECTIONS.length];
         
-        player.posX = xCoord + direction.offsetX;
-        player.posY = yCoord + direction.offsetY;
-        player.posZ = zCoord + direction.offsetZ;
-        player.eyeHeight = 0;
-        player.prevRotationPitch = player.rotationYaw = this.getFacingDirection().ordinal() * 90;
-        player.prevRotationYaw = player.rotationPitch = direction == ForgeDirection.UP ? 90 : direction == ForgeDirection.DOWN ? -90 : 0;
+        player.eyeHeight = .5F;
         player.theItemInWorldManager.setBlockReachDistance(1);
+        System.out.println(player);
+        
+       
+        
+        player.prevRotationPitch = player.rotationYaw = 90;
+        player.prevRotationYawHead = 50;
+        player.posX = xCoord;
+        player.posY = yCoord;
+        player.posZ = zCoord;
+        
+        float hitX = xCoord;
+        float hitY = xCoord;
+        float hitZ = xCoord;
         
         for (int i = 0; i < allInventories.length; i++) {
             
@@ -88,11 +100,10 @@ public class TileDeployer extends TileBase implements ISidedInventory {
                     
                     if (allInventories[i].getItem() instanceof ItemBlock) {
                         Block block = Block.getBlockFromItem(allInventories[i].getItem());
-                        Material material = worldObj.getBlock(xCoord + direction.offsetX, yCoord + direction.offsetY, zCoord + direction.offsetZ)
-                                .getMaterial();
-                        if (worldObj.isAirBlock(xCoord + direction.offsetX, yCoord + direction.offsetY, zCoord + direction.offsetZ)
-                                || material.isLiquid() || material.isReplaceable()) {
+                        Material material = worldObj.getBlock(xCoord + direction.offsetX, yCoord + direction.offsetY, zCoord + direction.offsetZ).getMaterial();
+                        if (worldObj.isAirBlock(xCoord + direction.offsetX, yCoord + direction.offsetY, zCoord + direction.offsetZ)|| material.isLiquid() || material.isReplaceable()) {
                             worldObj.setBlock(xCoord + direction.offsetX, yCoord + direction.offsetY, zCoord + direction.offsetZ, block);
+                              
                             decrStackSize(i, 1);
                             break;
                         }
@@ -105,7 +116,19 @@ public class TileDeployer extends TileBase implements ISidedInventory {
                             
                             ItemStack result = allInventories[i].useItemRightClick(worldObj, player);
                             allInventories[getAvailableSlot()] = player.inventory.getStackInSlot(1);
-                            break;
+                            if (result == null || !result.isItemEqual(allInventories[i])|| !ItemStack.areItemStackTagsEqual(result, allInventories[i])) {
+                            } else {
+                                
+                                player.theItemInWorldManager.activateBlockOrUseItem(player, worldObj, allInventories[i], xCoord + direction.offsetX,yCoord + direction.offsetY, zCoord + direction.offsetZ, direction.ordinal(), hitX, hitY, hitZ);
+                                ItemStack playerItem = player.inventory.getStackInSlot(0);
+                                
+                                if (playerItem == null || !playerItem.isItemEqual(allInventories[i])|| !ItemStack.areItemStackTagsEqual(playerItem, allInventories[i])) {
+                                    allInventories[i] = null;
+                                }
+                                break;
+                                
+                            }
+                            
                         } else {
                             
                             ItemStack result = allInventories[i].useItemRightClick(worldObj, player);
@@ -116,6 +139,15 @@ public class TileDeployer extends TileBase implements ISidedInventory {
                                 break;
                             } else {
                                 
+                                player.theItemInWorldManager.activateBlockOrUseItem(player, worldObj, allInventories[i], xCoord + direction.offsetX,
+                                        yCoord + direction.offsetY, zCoord + direction.offsetZ, getFacingDirection().ordinal(), hitX, hitY, hitZ);
+                                
+                                ItemStack playerItem = player.inventory.getStackInSlot(0);
+                                if (playerItem == null || !playerItem.isItemEqual(allInventories[i])|| !ItemStack.areItemStackTagsEqual(playerItem, allInventories[i])) {
+                                    allInventories[i] = null;
+                                }
+                                decrStackSize(i, 1);
+                                break;
                             }
                         }
                     }
@@ -126,6 +158,8 @@ public class TileDeployer extends TileBase implements ISidedInventory {
             for (int k = 0; k < player.inventory.getSizeInventory(); k++) {
                 player.inventory.setInventorySlotContents(k, null);
             }
+            player.setDead();
+            worldObj.removeEntity(player);
         }
     }
     
