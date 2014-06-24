@@ -2,6 +2,9 @@
 
 Blue Power is a collaborative effort to revive some of the things that are missing from previous versions of modded Minecraft.
 
+Due to Quetzi pulling the plug on this project, in favour of waiting on RedPower 3, this project is going nowhere.
+I am keeping this repo branch online as a record of the code I wrote for the computer itself.
+
 ## Installing
 
 1. Clone into an empty directory using your git client of choice.
