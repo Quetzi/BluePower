@@ -1,4 +1,4 @@
 # BluePower
 
-This project has moved to https://bluepowermod.com
+This project has moved to http://bluepowermod.com
 
