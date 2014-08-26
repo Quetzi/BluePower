@@ -17,16 +17,32 @@
 
 package net.quetzi.bluepower;
 
+import com.mojang.authlib.GameProfile;
+
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.world.World;
+import net.minecraft.world.WorldServer;
+import net.minecraftforge.common.util.FakePlayerFactory;
+import net.quetzi.bluepower.references.Refs;
 
 public class CommonProxy {
     
+	public static EntityPlayer fakePlayer;
+	
     public void init() {
     
     }
     
     public void initRenderers() {
     
+    }
+    
+    public EntityPlayer getFakePlayer(World world) {
+    	if(fakePlayer == null) {
+    		fakePlayer = FakePlayerFactory.get((WorldServer) world, new GameProfile(Refs.MODID, "Bluepower"));
+    	}
+    	
+    	return fakePlayer;
     }
     
     public EntityPlayer getPlayer() {

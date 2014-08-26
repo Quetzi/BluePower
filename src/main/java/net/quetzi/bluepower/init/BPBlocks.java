@@ -25,11 +25,11 @@ import net.quetzi.bluepower.blocks.computer.BlockDiskDrive;
 import net.quetzi.bluepower.blocks.computer.BlockIOExpander;
 import net.quetzi.bluepower.blocks.computer.BlockMonitor;
 import net.quetzi.bluepower.blocks.machines.*;
-import net.quetzi.bluepower.blocks.machines.BlockKineticGenerator;
 import net.quetzi.bluepower.blocks.worldgen.BlockCrackedBasalt;
 import net.quetzi.bluepower.blocks.worldgen.BlockCrop;
 import net.quetzi.bluepower.blocks.worldgen.BlockCustomFlower;
 import net.quetzi.bluepower.blocks.worldgen.BlockStoneOre;
+import net.quetzi.bluepower.blocks.machines.BlockKineticGenerator;
 import net.quetzi.bluepower.blocks.worldgen.BlockStoneOreConnected;
 import net.quetzi.bluepower.references.Dependencies;
 import net.quetzi.bluepower.references.Refs;
@@ -88,6 +88,7 @@ public class BPBlocks {
     public static Block project_table;
     public static Block ejector;
     public static Block relay;
+    public static Block assembler;
 
     public static Block cpu;
     public static Block monitor;
@@ -151,7 +152,8 @@ public class BPBlocks {
         transposer = new BlockTransposer();
         ejector = new BlockEjector();
         relay = new BlockRelay();
-
+        assembler = new BlockAssembler();
+        
         cpu = new BlockCPU();
         monitor = new BlockMonitor();
         disk_drive = new BlockDiskDrive();
@@ -225,6 +227,7 @@ public class BPBlocks {
         GameRegistry.registerBlock(transposer, Refs.TRANSPOSER_NAME);
         GameRegistry.registerBlock(ejector, Refs.EJECTOR_NAME);
         GameRegistry.registerBlock(relay, Refs.RELAY_NAME);
+        GameRegistry.registerBlock(assembler, Refs.ASSEMBLER_NAME);
 
         GameRegistry.registerBlock(cpu, Refs.BLOCKCPU_NAME);
         GameRegistry.registerBlock(monitor, Refs.BLOCKMONITOR_NAME);

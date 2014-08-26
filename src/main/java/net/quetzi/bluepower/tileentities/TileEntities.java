@@ -18,6 +18,7 @@
 package net.quetzi.bluepower.tileentities;
 
 import net.quetzi.bluepower.tileentities.tier1.*;
+import net.quetzi.bluepower.tileentities.tier2.TileAssembler;
 import net.quetzi.bluepower.tileentities.tier2.TileSortingMachine;
 import net.quetzi.bluepower.tileentities.tier3.TileCPU;
 import net.quetzi.bluepower.tileentities.tier3.TileDiskDrive;
@@ -27,12 +28,12 @@ import net.quetzi.bluepower.tileentities.tier3.TileSortron;
 import cpw.mods.fml.common.registry.GameRegistry;
 
 public class TileEntities {
-    
+
     /**
      * Method to register the TE's to the game. If a TE is not registered, it _will_ cause issues!
      */
     public static void init() {
-    
+
         GameRegistry.registerTileEntity(TileAlloyFurnace.class, "tileAlloyFurnace");
         GameRegistry.registerTileEntity(TileBlockBreaker.class, "tileBlockBreaker");
         GameRegistry.registerTileEntity(TileIgniter.class, "tileIgniter");
@@ -51,5 +52,6 @@ public class TileEntities {
         GameRegistry.registerTileEntity(TileEjector.class, "ejector");
         GameRegistry.registerTileEntity(TileRelay.class, "relay");
         GameRegistry.registerTileEntity(TileLamp.class, "tileLamp");
+        GameRegistry.registerTileEntity(TileAssembler.class, "assembler");
     }
 }

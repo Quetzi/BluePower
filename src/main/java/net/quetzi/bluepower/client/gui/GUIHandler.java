@@ -29,6 +29,7 @@ import net.quetzi.bluepower.items.ItemScrewdriver;
 import net.quetzi.bluepower.items.ItemSeedBag;
 import net.quetzi.bluepower.references.GuiIDs;
 import net.quetzi.bluepower.tileentities.tier1.*;
+import net.quetzi.bluepower.tileentities.tier2.TileAssembler;
 import net.quetzi.bluepower.tileentities.tier2.TileSortingMachine;
 import net.quetzi.bluepower.tileentities.tier3.*;
 
@@ -87,6 +88,8 @@ public class GUIHandler implements IGuiHandler {
                 return new ContainerRelay(player.inventory, (TileRelay) ent);
             case EJECTOR_ID:
                 return new ContainerEjector(player.inventory, (TileEjector) ent);
+            case ASSEMBLER_ID: 
+            	return new ContainerAssembler(player.inventory, (TileAssembler) ent);
             default:
                 break;
         }
@@ -142,6 +145,8 @@ public class GUIHandler implements IGuiHandler {
                 return new GuiRelay(player.inventory, (TileRelay) ent);
             case EJECTOR_ID:
                 return new GuiEjector(player.inventory, (TileEjector) ent);
+            case ASSEMBLER_ID:
+            	return new GuiAssembler(player.inventory, (TileAssembler) ent);
             default:
                 break;
         }

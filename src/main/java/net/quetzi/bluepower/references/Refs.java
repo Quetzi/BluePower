@@ -191,6 +191,7 @@ public class Refs {
     public static final String   IRONWIRE_NAME            = "iron_wire";
     public static final String   WOOLCARD_NAME            = "wool_card";
     public static final String   DIAMONDDRAWPLATE_NAME    = "diamond_drawplate";
+    public static final String   ASSEMBLER_NAME			  = "assembler";
     
     public static final String   PROJECTTABLE_NAME        = "project_table";
 
